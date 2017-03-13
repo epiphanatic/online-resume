@@ -28,7 +28,7 @@ const bio = {
         const formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         const formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         const formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
+        $("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
             for (let i = 0; i < bio.skills.length; i++) {
@@ -36,6 +36,7 @@ const bio = {
                 $("#skills").append(formattedSkill);
             }
         }
+        // $("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
     }
 
 };
@@ -227,15 +228,6 @@ education.display();
 // add map
 
 $("#mapDiv").append(googleMap);
-initializeMap();
-
-// add let's connect info
-
-const formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-const formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-const formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-const formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
 // get clicks
 
